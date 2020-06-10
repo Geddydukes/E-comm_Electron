@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import Header from "./components/Header";
+import Routes from "./config/routes";
+import UserContext from "./context/UserContext";
+import { logoutUser } from "./models/user";
+// import "./App.css";
 
-function App() {
+function App(props) {
+  const [currentUser, setCurrentUser] = useState(localStorage.getItem("uid"));
+
+  const storeUser = (userId) => {
+    setCurrentUser(userId);
+    localStorage.setItem("uid", userId);
+  };
+
+  const logout = (event) => {
+    event.preventDefault();
+    localStorage.removeItem("uid");
+    logoutUser().then((res) => {
+      console.log(res);
+      setCurrentUser(null);
+      props.history.push("/");
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{ currentUser, storeUser, logout }}>
+      <div className="appContainer">
+        <Header />
+        <Routes />
+      </div>
+    </UserContext.Provider>
   );
 }
 
-export default App;
+export default withRouter(App);
