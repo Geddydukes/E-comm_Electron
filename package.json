@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "productName": "Electron e-commerce side",
-  "main": "electron/main.js",
   "homepage": "./",
+  "main": "main.js",
   "build": {
     "appId": "my.electron.app",
     "directories": {
@@ -35,7 +35,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "export BROWSER=none && react-scripts start",
+    "start": "export BROWSER=none && export ELECTRON_START_URL=http://localhost:3001 && electron .",
     "start-electron": "export ELECTRON_START_URL=http://localhost:3001 && electron .",
     "build": "react-scripts build",
     "test": "react-scripts test",
