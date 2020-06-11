@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 // import Profile from "../pages/Profile";
-// import Register from "../pages/Register";
+import Register from "../pages/Register";
 
 const Routes = (props) => (
   <Switch>
@@ -21,7 +21,7 @@ const Routes = (props) => (
         );
       }}
     />
-    {/* <Route path="/register" component={Register} /> */}
+    <Route path="/register" component={Register} />
     {/* <Route path="/profile" component={Profile} /> */}
   </Switch>
 );
