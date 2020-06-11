@@ -24,6 +24,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.0",
+    "cloudinary-core": "^2.8.2",
+    "cloudinary-react": "^1.5.0",
     "electron": "^9.0.3",
     "electron-is-dev": "^1.2.0",
     "react": "^16.13.1",

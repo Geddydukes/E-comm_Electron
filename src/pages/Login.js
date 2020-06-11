@@ -47,7 +47,8 @@ const Login = (props) => {
       <br />
       <h4>Login</h4>
       {loginData.message ? loginData.message : ""}
-      <Form>
+
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <input
