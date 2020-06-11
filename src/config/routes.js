@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-// import Profile from "../pages/Profile";
+import Inventory from "../pages/Inventory";
 import Register from "../pages/Register";
 
 const Routes = (props) => (
@@ -22,6 +22,7 @@ const Routes = (props) => (
       }}
     />
     <Route path="/register" component={Register} />
+    <Route path="/inventory" component={Inventory} />
     {/* <Route path="/profile" component={Profile} /> */}
   </Switch>
 );
