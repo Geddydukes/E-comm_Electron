@@ -4,7 +4,7 @@
   "private": true,
   "productName": "Electron e-commerce side",
   "homepage": "./",
-  "main": "main.js",
+  "main": "electron/main.js",
   "build": {
     "appId": "my.electron.app",
     "directories": {
@@ -26,7 +26,6 @@
     "bootstrap": "^4.5.0",
     "cloudinary-core": "^2.8.2",
     "cloudinary-react": "^1.5.0",
-    "electron": "^9.0.3",
     "electron-is-dev": "^1.2.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
@@ -35,7 +34,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "export BROWSER=none && export ELECTRON_START_URL=http://localhost:3001 && electron .",
+    "start": "export BROWSER=none && react-scripts start",
     "start-electron": "export ELECTRON_START_URL=http://localhost:3001 && electron .",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -57,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "electron": "^9.0.3",
     "electron-builder": "^22.7.0"
   }
 }

@@ -32,7 +32,7 @@ const Register = (props) => {
         phoneNumber: "",
         address: "",
         password: "",
-        code: "customer",
+        code: "",
       });
       props.history.push("/login");
     });

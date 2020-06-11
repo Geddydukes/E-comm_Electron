@@ -7,10 +7,25 @@ const indexProducts = async () => {
 };
 
 const showProduct = (productId) => {
-  return fetch(`${appApi}/products/${productId}`).then((res) => res.json());
+  return fetch(`${appApi}/products/${productId}`, {
+    method: "Get",
+  }).then((res) => res.json());
+};
+
+const createProduct = (productData) => {
+  console.log(productData);
+  return fetch(`${appApi}/products/new`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify(productData),
+  }).then((res) => res.json());
 };
 
 module.exports = {
   indexProducts,
   showProduct,
+  createProduct,
 };
