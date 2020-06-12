@@ -38,7 +38,7 @@ const Register = (props) => {
     });
   };
   return (
-    <div>
+    <div className="registerContainer">
       <br />
       <br />
       <br />

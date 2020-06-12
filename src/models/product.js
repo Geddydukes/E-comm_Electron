@@ -24,8 +24,29 @@ const createProduct = (productData) => {
   }).then((res) => res.json());
 };
 
+const deleteProduct = (productData) => {
+  return fetch(`${appApi}/products/${productData._id}`, {
+    method: "DELETE",
+  })
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+};
+
+const updateProduct = (productData) => {
+  console.log(productData);
+  return fetch(`${appApi}/products/${productData._id}/edit`, {
+    method: "PUT",
+    body: JSON.stringify(productData),
+    headers: { "Content-type": "application/json" },
+  })
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+};
+
 module.exports = {
   indexProducts,
   showProduct,
   createProduct,
+  deleteProduct,
+  updateProduct,
 };

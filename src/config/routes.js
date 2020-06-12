@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Inventory from "../pages/Inventory";
 import Register from "../pages/Register";
 import AddProduct from "../pages/AddProduct";
+import EditProduct from "../pages/EditProduct";
 
 const Routes = (props) => (
   <Switch>
@@ -25,6 +26,7 @@ const Routes = (props) => (
     <Route path="/register" component={Register} />
     <Route path="/inventory" component={Inventory} />
     <Route path="/new" component={AddProduct} />
+    <Route path="/:id/edit" component={EditProduct} />
     {/* <Route path="/profile" component={Profile} /> */}
   </Switch>
 );

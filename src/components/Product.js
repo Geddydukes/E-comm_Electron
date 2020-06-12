@@ -1,18 +1,28 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
-  console.log("this is the props", props);
+  let product = props.product;
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={props.product.image} alt={props.name} />
+    <div className="adminProducts">
+      <Card style={{ width: "12rem" }}>
         <Card.Body>
           <Card.Title>{props.product.name}</Card.Title>
           <Card.Text>{props.product.description}</Card.Text>
           <Card.Text>Price: {props.product.price}</Card.Text>
-          <Button variant="primary">Add to Cart</Button>
+          <Link
+            to={{
+              pathname: `/${props.product._id}/edit`,
+              state: { product: props.product },
+            }}
+          >
+            <Button variant="primary">Edit</Button>
+          </Link>
+          <Button variant="primary" onClick={() => props.deleteItem(product)}>
+            Delete
+          </Button>
         </Card.Body>
       </Card>
     </div>

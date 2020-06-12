@@ -4,7 +4,8 @@ import Header from "./components/Header";
 import Routes from "./config/routes";
 import UserContext from "./context/UserContext";
 import { logoutUser } from "./models/user";
-// import "./App.css";
+import "./App.css";
+import Container from "react-bootstrap/Container";
 
 function App(props) {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem("uid"));
@@ -28,7 +29,9 @@ function App(props) {
     <UserContext.Provider value={{ currentUser, storeUser, logout }}>
       <div className="appContainer">
         <Header />
-        <Routes />
+        <Container className="App-container">
+          <Routes />
+        </Container>
       </div>
     </UserContext.Provider>
   );
